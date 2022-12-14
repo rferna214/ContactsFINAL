@@ -10,7 +10,7 @@ import { openDatabase } from "react-native-sqlite-storage";
 const myContactsDB = openDatabase({name: 'MyContacts.db'});
 const contactsTableName = 'contacts';
 
-const ContactsScreen = props => {
+const FriendContactsScreen = props => {
 
   const navigation = useNavigation();
 
@@ -25,7 +25,7 @@ const ContactsScreen = props => {
       myContactsDB.transaction(txn => {
         // execute SELECT
         txn.executeSql(
-          `SELECT * FROM ${contactsTableName}`,
+          `SELECT * FROM ${contactsTableName} WHERE groupname = "Friends"`,
           [],
           // callback function to handle the results from the
           // SELECT s
@@ -86,4 +86,4 @@ const ContactsScreen = props => {
   );
 };
 
-export default ContactsScreen;
+export default FriendContactsScreen;

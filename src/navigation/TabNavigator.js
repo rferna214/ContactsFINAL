@@ -1,5 +1,7 @@
 import React from 'react';
 import ContactsScreen from '../screens/Contacts';
+import FamilyContactsScreen from '../screens/FamilyContacts';
+import FriendContactsScreen from '../screens/FriendContacts';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
@@ -22,6 +24,9 @@ const TabNavigator = props => {
         }}
     >
         <Tab.Screen name={'All'} component={ContactsScreen}/>
+        <Tab.Screen name={'Family'} component={FamilyContactsScreen}/>
+        <Tab.Screen name={'Friends'} component={FriendContactsScreen}/>
+
     </Tab.Navigator>
   );
 };
